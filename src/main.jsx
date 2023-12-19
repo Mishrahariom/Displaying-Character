@@ -22,14 +22,26 @@ const Root = () => {
   return (
     <>
       <nav>
-        <Link to="characters">Characters</Link>
-        <Link to="locations">Locations</Link>
-        <Link to="episodes">Episodes</Link>
+        <Link to="/characters">Characters</Link>
+        <Link to="/locations">Locations</Link>
+        <Link to="/episodes">Episodes</Link>
       </nav>
-      <Outlet /> {/* Uncomment this line */}
+      <Outlet />
     </>
   );
 };
+
+export default Root;
+
+
+
+const Testing = () => {
+  return (
+    <>
+      <h1>Testing</h1>
+    </>
+  );
+}
 
 
 const router = createBrowserRouter([
@@ -40,16 +52,44 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: 'characters',
+        path: "characters",
         element: <CharactersPage />,
-        children: [
-          {
-            path: ':id',
-            element: <CharacterDetailPage />
-          }
-        ]
       },
+      {
+        path: "characters/:id",
+        element: <CharacterDetailPage />,
+      },
+
       // {
+      //   path: "locations",
+      //   element: <CharactersPage />,
+      // },
+      // {
+      //   path: "locations/:id",
+      //   element: <Testing />,
+      // },
+
+      // {
+      //   path: "episodes",
+      //   element: <CharactersPage />,
+      // },
+      // {
+      //   path: "episodes/:id",
+      //   element: <Testing />,
+      // },
+      
+    ]
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
+
+
+
+
+// {
       //   path: 'locations',
       //   element: <LocationsPage />,
       //   children: [
@@ -69,10 +109,3 @@ const router = createBrowserRouter([
       //     }
       //   ]
       // },
-    ]
-  },
-]);
-
-createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);

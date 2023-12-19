@@ -14,11 +14,11 @@ const CharacterDetail = ({ character }) => {
         <p>Origin: {origin.name}</p>
         <p>Current Location: {location.name}</p>
         <p>Episodes:</p>
-        <ul>
+        {/* <ul>
           {episodes.map((episode) => (
             <li key={episode.id}>{episode.name}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
