@@ -6,8 +6,8 @@ import CharacterDetailPage from "./pages/CharacterDetailPage";
 // import CharacterDetailPage from '../src/pages/CharacterDetailPage';
 // import LocationsPage from './pages/LocationsPage';
 // import LocationDetailPage from './pages/LocationDetailPage';
-// import EpisodesPage from './pages/EpisodesPage';
-// import EpisodeDetailPage from './pages/EpisodeDetailPage';
+import EpisodePage from './pages/EpisodePage';
+import EpisodeDetailPage from './pages/EpisodeDetailPage';
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -35,13 +35,7 @@ export default Root;
 
 
 
-const Testing = () => {
-  return (
-    <>
-      <h1>Testing</h1>
-    </>
-  );
-}
+
 
 
 const router = createBrowserRouter([
@@ -58,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "characters/:id",
         element: <CharacterDetailPage />,
+      },
+      {
+        path: "episodes",
+        element: <EpisodePage />,
+      },
+      {
+        path: "episodes/:id",
+        element: <EpisodeDetailPage />,
       },
 
       // {
