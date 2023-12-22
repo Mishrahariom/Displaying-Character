@@ -1,21 +1,155 @@
 /* src/styles.css */
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
+/* character-card.css */
+
+/* character-card.css */
+
+.character-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.character-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.character-card h3 {
+  margin: 0;
   
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.character-card p {
+  margin: 0;
+  color: #666;
+}
+
+@media screen and (max-width: 768px) {
   .character-card {
-    border: 1px solid #ddd;
     padding: 10px;
-    text-align: center;
   }
-  
+
+  .character-card h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .character-card {
+    padding: 5px;
+  }
+
+  .character-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .character-card p {
+    font-size: 0.7rem;
+  }
+
   .character-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    margin-bottom: 5px;
   }
+
+
+
+
+
+}
+
+
+
+/* CharacterDetail.css */
+
+/* Charecter.css */
+
+.character-detail {
+  text-align: center;
+  width: fit-content;
+  display: flex;
+  margin: max(10px, 5vw) auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #3498db, #6c5ce7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: #fff;
+}
+
+.character-detail img {
+  max-height: 100vh;
+  width: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.character-detail:hover img {
+  transform: rotate(360deg) scale(1);
+}
+
+.character-detail div {
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.character-detail:hover div {
+  opacity: 1;
+}
+
+.character-detail h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.character-detail p {
+  margin: 5px 0;
+}
+
+.character-detail ul {
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.character-detail li {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .character-detail {
+    flex-direction: column;
+  }
+
+  .character-detail img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-height: 70vh;
+  }
+}
+
+
+
+
+
+
+
   
   /* Add more styling as needed */
   

@@ -1,8 +1,25 @@
 // EpisodeGrid/EpisodeDetail.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const EpisodeDetail = ({ episode }) => {
   const { name, air_date, episode_number, characters } = episode;
+  const [characterDetails, setCharacterDetails] = useState([]);
+
+  useEffect(() => {
+    const fetchCharacterDetails = async () => {
+      try {
+        const characterPromises = characters.map((characterUrl) => axios.get(characterUrl));
+        const characterResponses = await Promise.all(characterPromises);
+        const characterDetails = characterResponses.map((response) => response.data);
+        setCharacterDetails(characterDetails);
+      } catch (error) {
+        console.error('Error fetching character details:', error);
+      }
+    };
+
+    fetchCharacterDetails();
+  }, [characters]);
 
   return (
     <div className="episode-detail">
@@ -11,8 +28,8 @@ const EpisodeDetail = ({ episode }) => {
       <p>Episode Number: {episode_number}</p>
       <p>Characters:</p>
       <ul>
-        {characters.map((character, index) => (
-          <li key={character.id || index}>{character.name}</li>
+        {characterDetails.map((character) => (
+          <li key={character.id}>{character.name}</li>
         ))}
       </ul>
     </div>

@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import CharacterCard from '../components/CharacterGrid/CharacterCard';
 
+import '../App.css';
+
 import axios from 'axios';
 
 
@@ -23,7 +25,7 @@ const CharactersPage = () => {
 
   return (
     <div>
-      <h2>Rick and Morty Characters</h2>
+      <h2 className='character-name'>Rick and Morty Characters</h2>
       <div className="character-grid">
         {characters.map((character) => (
           <CharacterCard key={character.id} character={character} />

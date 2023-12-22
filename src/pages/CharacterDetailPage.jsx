@@ -28,7 +28,7 @@ const CharacterDetailPage = () => {
 
   return (
     <div>
-      <h2>Character Details</h2>
+      <h2 style={{"textAlign": "center"}}>Character Details</h2>
       <CharacterDetail character={character} />
     </div>
   );
