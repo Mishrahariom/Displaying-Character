@@ -1,4 +1,3 @@
-// Pages/EpisodeDetailPage.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -28,7 +27,7 @@ const EpisodeDetailPage = () => {
 
   return (
     <div>
-      <h2>Episode Details</h2>
+      <h2 style={{"textAlign": "center"}}>Episode Details</h2>
       <EpisodeDetail episode={episode} />
     </div>
   );

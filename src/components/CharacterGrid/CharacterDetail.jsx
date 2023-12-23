@@ -1,9 +1,7 @@
-// src/components/CharacterGrid/CharacterDetail.js
-// CharacterGrid/CharacterDetail.jsx
-// CharacterGrid/CharacterDetail.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../CharacterGrid/Charecter.css'
+import { Link } from 'react-router-dom'; 
+import '../CharacterGrid/Charecter.css';
 
 const CharacterDetail = ({ character }) => {
   const { name, image, species, gender, origin, location, episode } = character;
@@ -33,10 +31,12 @@ const CharacterDetail = ({ character }) => {
         <p>Gender: {gender}</p>
         <p>Origin: {origin.name}</p>
         <p>Current Location: {location.name}</p>
-        <p>Episodes: 👇</p>
+        <p>Episodes:  Click👇</p>
         <ul>
           {episodeDetails.map((episode) => (
-            <li key={episode.id}>{episode.name}</li>
+            <li key={episode.id}>
+              <Link to={`/episodes/${episode.id}`}>{episode.name}</Link>
+            </li>
           ))}
         </ul>
       </div>
@@ -45,5 +45,6 @@ const CharacterDetail = ({ character }) => {
 };
 
 export default CharacterDetail;
+
 
 

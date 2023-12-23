@@ -1,50 +1,6 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  
+/* style to my character page  */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
-
-/* characters-page.css */
-
-/* characters-page.css */
 
 .character-grid {
   display: grid;
@@ -64,6 +20,24 @@
   color: #333;
 }
 
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-container input,
+.filter-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive styling */
 @media screen and (max-width: 768px) {
   .character-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -73,8 +47,13 @@
     font-size: 1.5rem;
   }
 
-
+  .filter-container input,
+  .filter-container select {
+    width: 100%;
+  }
 }
+
+
 
 
 /* Navbar.css */
@@ -94,7 +73,7 @@
 }
 
 .navbar a:hover {
-  color: #ffd700; /* Change to your preferred hover color */
+  color: #ffd700; 
 }
 
 @media screen and (max-width: 768px) {
@@ -107,5 +86,104 @@
     margin: 10px 0;
   }
 }
+
+
+
+/* style to my episode page */
+
+
+
+
+.episode-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.episode-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+@media screen and (max-width: 768px) {
+  .episode-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .episode-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px; 
+  }
+}
+
+
+
+
+
+
+/* 
+style to my location page */
+
+
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.location-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.location-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* LocationDetailPage.css */
+
+.location-detail-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.location-detail-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.loading-message {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  .location-detail-page {
+    padding: 10px;
+  }
+
+  .location-detail-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 

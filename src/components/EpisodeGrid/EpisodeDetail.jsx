@@ -1,6 +1,7 @@
-// EpisodeGrid/EpisodeDetail.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import '../EpisodeGrid/Episode.css';
 
 const EpisodeDetail = ({ episode }) => {
   const { name, air_date, episode_number, characters } = episode;
@@ -26,10 +27,13 @@ const EpisodeDetail = ({ episode }) => {
       <h2>{name}</h2>
       <p>Air Date: {air_date}</p>
       <p>Episode Number: {episode_number}</p>
-      <p>Characters:</p>
+      <p>Characters: Click👇</p>
       <ul>
         {characterDetails.map((character) => (
-          <li key={character.id}>{character.name}</li>
+          <li key={character.id}>
+            {/* Link to the character details page */}
+            <Link to={`/characters/${character.id}`}>{character.name}</Link>
+          </li>
         ))}
       </ul>
     </div>
@@ -37,5 +41,6 @@ const EpisodeDetail = ({ episode }) => {
 };
 
 export default EpisodeDetail;
+
 
 

@@ -1,0 +1,113 @@
+/* Location.css */
+
+.location-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .location-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .location-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .location-card p {
+    margin: 5px 0;
+  }
+  
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .location-card {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+
+  
+
+
+  
+
+/* LocationDetail.css */
+
+.location-detail {
+    text-align: center;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #3498db, #6c5ce7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  .location-detail img {
+    max-height: 100vh;
+    width: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .location-detail:hover img {
+    transform: rotate(360deg) scale(1);
+  }
+  
+  .location-detail div {
+    flex: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .location-detail:hover div {
+    opacity: 1;
+  }
+  
+  .location-detail h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .location-detail p {
+    margin: 10px 0;
+  }
+  
+  .location-detail ul {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .location-detail li {
+    margin: 5px 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .location-detail img {
+      margin: 10px 0;
+      max-height: 70vh;
+    }
+  }
+  
+  
+  

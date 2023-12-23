@@ -1,7 +1,6 @@
-// LocationGrid/LocationCard.jsx
-// components/LocationGrid/LocationCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../LocationGrid/Location.css'
 
 const LocationCard = ({ location }) => {
   const { id, name, type, dimension } = location;

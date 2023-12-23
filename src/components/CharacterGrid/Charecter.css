@@ -1,5 +1,4 @@
-/* src/styles.css */
-/* character-card.css */
+
 
 /* character-card.css */
 
@@ -147,9 +146,21 @@
 
 
 
+.character-detail ul li a {
+  color: black; 
+  text-decoration: none; 
+}
+
+.character-detail ul li a:hover {
+  text-decoration: underline; 
+}
 
 
 
-  
-  /* Add more styling as needed */
+
+
+
+
+
+
   

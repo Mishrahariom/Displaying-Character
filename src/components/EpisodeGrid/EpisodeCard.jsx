@@ -1,6 +1,6 @@
-// EpisodeGrid/EpisodeCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../EpisodeGrid/Episode.css'
 
 const EpisodeCard = ({ episode }) => {
   const { id, name, air_date, episode_number } = episode;

@@ -1,6 +1,6 @@
-// LocationGrid/LocationDetail.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../LocationGrid/Location.css';
 
 const  LocationDetail = ({ location }) => {
   const { name, type, dimension, residents } = location;

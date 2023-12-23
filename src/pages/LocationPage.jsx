@@ -1,18 +1,18 @@
-// Pages/LocationPage.jsx
-
-// pages/LocationPage.jsx
 import React, { useState, useEffect } from 'react';
-import LocationCard from '../components/LocationGrid/LocationCard';
-
 import axios from 'axios';
+import '../App.css';
+import LocationCard from '../components/LocationGrid/LocationCard';
 
 const LocationPage = () => {
   const [locations, setLocations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get('https://rickandmortyapi.com/api/location');
+        const response = await axios.get('https://rickandmortyapi.com/api/location', {
+          params: { name: searchTerm }
+        });
         setLocations(response.data.results);
       } catch (error) {
         console.error('Error fetching locations:', error);
@@ -20,11 +20,19 @@ const LocationPage = () => {
     };
 
     fetchLocations();
-  }, []);
+  }, [searchTerm]);
 
   return (
     <div>
-      <h2>Rick and Morty Locations</h2>
+      <h2 style={{ textAlign: "center" }}>Rick and Morty Locations</h2>
+      <div className="filter-container">
+        <input
+          type="text"
+          placeholder="Search by location name"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <div className="location-grid">
         {locations.map((location) => (
           <LocationCard key={location.id} location={location} />
@@ -36,36 +44,3 @@ const LocationPage = () => {
 
 export default LocationPage;
 
-// import React, { useState, useEffect } from 'react';
-// import LocationCard from '../components/LocationGrid/LocationCard';
-// import axios from 'axios';
-
-// const LocationsPage = () => {
-//   const [locations, setLocations] = useState([]);
-
-//   useEffect(() => {
-//     const fetchLocations = async () => {
-//       try {
-//         const response = await axios.get('https://rickandmortyapi.com/api/location');
-//         setLocations(response.data.results);
-//       } catch (error) {
-//         console.error('Error fetching locations:', error);
-//       }
-//     };
-
-//     fetchLocations();
-//   }, []);
-
-//   return (
-//     <div>
-//       <h2>Rick and Morty Locations</h2>
-//       <div className="location-grid">
-//         {locations.map((location) => (
-//           <LocationCard key={location.id} location={location} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LocationsPage;

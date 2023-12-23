@@ -1,8 +1,7 @@
-// Pages/LocationDetailPage.jsx
-// pages/LocationDetailPage.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import '../App.css';
 
 import LocationDetail from '../components/LocationGrid/LocationDetail';
 
@@ -29,7 +28,7 @@ const LocationDetailPage = () => {
 
   return (
     <div>
-      <h2>Location Details</h2>
+      <h2 style={{"textAlign": "center"}}>Location Details</h2>
       <LocationDetail location={location} />
     </div>
   );
